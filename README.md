@@ -2,6 +2,17 @@
 
 ## Notas Técnicas
 
+### Install
+
+Caso o projeto seja reaproveitado a partir do github ou de outro repositório
+
+1. Clone o repositório
+2. Realize o comando de instalação
+
+```
+npm install
+```
+
 ### Sobre o vite
 
 O vite está fazendo a "Hot Reload"
