@@ -37,6 +37,30 @@ MINIO_BUCKET=
 MINIO_PATH=
 ```
 
+### Erro de caminhos relativos
+
+Uma vez que eu compilava o projeto e tinha erros na distribuição dos pacotes, realizei uma mudança no vite.config.js
+
+``` javascript
+import { fileURLToPath, URL } from 'node:url'
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import vueDevTools from 'vite-plugin-vue-devtools'
+
+// https://vite.dev/config/
+export default defineConfig({
+  base: './', // 👈 Garante que todos os caminhos sejam relativos (funciona em MinIO)
+  plugins: [vue(), vueDevTools()],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+})
+```
+
+
+
 
 
 ## Lesson1 - Foundations
