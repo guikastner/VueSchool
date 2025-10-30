@@ -102,3 +102,38 @@ Exemplo, tornar todos os caracteres minúsculos
   <h1>{{ header.toLocaleUpperCase() }}</h1>
 </template>
 ```
+
+## Lesson 4 - Eventos
+
+Para forms há eventos de submissão
+
+``` vue
+  <form 
+    class="add-item-form"
+    v-on:submit="items.push({ id: items.length + 1,text: newItem })"
+  >
+```
+
+Para botão, eventos de clique
+
+``` vue
+  <form 
+    class="add-item-form"
+    v-on:submit="items.push({ id: items.length + 1,text: newItem })"
+  >
+```
+
+``` vue
+  <input 
+    v-model.lazy="newItem"
+    v-on:keyup.enter="items.push({ id: items.length + 1,text: newItem })"
+    type="text" placeholder="add an item..." /> {{ newItem }}
+```
+
+``` vue
+  <button
+    v-on:click="items.push({ id: items.length + 1,text: newItem })"
+    class="btn btn-primary">
+    Save item
+  </button>
+```
